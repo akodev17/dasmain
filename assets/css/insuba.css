@@ -18637,6 +18637,8 @@ body.megamenu-popup-active .mobile-nav__content {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  border-radius: 12px;
+  border: 2px solid rgba(160, 163, 189, 0.37);
 }
 .portfolio-card-two--lg {
   padding-top: 402px;
