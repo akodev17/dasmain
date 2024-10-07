@@ -54,6 +54,7 @@
 # Error 404
 # Boxed Home
 --------------------------------------------------------------*/
+
 :root {
   --insuba-font: "Roboto", sans-serif;
   --insuba-font2: "Rubik", sans-serif;
@@ -412,6 +413,7 @@ h6 {
   min-width: 300px;
   overflow: hidden;
 }
+
 
 .section-space {
   padding-top: var(--section-space, 120px);
@@ -11788,8 +11790,8 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 .testimonials-two__thumb__item img {
   cursor: pointer;
-  width: 98px;
-  height: 98px;
+  width: 128px;
+  height: 128px;
   border-radius: 50%;
 }
 .testimonials-two__thumb__shape-left {
