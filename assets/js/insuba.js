@@ -18,6 +18,7 @@
     });
   }
 
+
   /*-- Checkout Accoradin --*/
   if ($(".checkout-page__payment__title").length) {
     $(".checkout-page__payment__item")
@@ -285,12 +286,12 @@
     mobileNavContainer.innerHTML = navContent;
   }
 
-  if ($(".sticky-header").length) {
-    $(".sticky-header")
-      .clone()
-      .insertAfter(".sticky-header")
-      .addClass("sticky-header--cloned");
-  }
+  // if ($(".sticky-header").length) {
+  //   $(".sticky-header")
+  //     .clone()
+  //     .insertAfter(".sticky-header")
+  //     .addClass("sticky-header--cloned");
+  // }
 
   if ($(".mobile-nav__container .main-menu__list").length) {
     let dropdownAnchor = $(
@@ -848,3 +849,89 @@
     insuba_stretch();
   });
 })(jQuery);
+
+  
+// Get the modal element
+const modal = document.getElementById("modal");
+const modalImage = document.getElementById("modal-image");
+let currentIndex = 0; // Track the currently displayed image
+
+// Function to open modal and display the clicked image
+function openModal(src, index) {
+    currentIndex = index; // Set the current index to the clicked image index
+    modal.style.display = "block";
+    modalImage.src = src;
+}
+
+// Function to close the modal
+function closeModal() {
+    modal.style.display = "none";
+}
+
+// Add click event listeners to gallery images
+const galleryItems = document.querySelectorAll('.gallery-item');
+galleryItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+        openModal(item.src, index);
+    });
+});
+
+// Function to change the image in the modal
+function changeImage(direction) {
+    currentIndex += direction;
+
+    // Loop back to the start or end if necessary
+    if (currentIndex < 0) {
+        currentIndex = galleryItems.length - 1; // Go to last image
+    } else if (currentIndex >= galleryItems.length) {
+        currentIndex = 0; // Go to first image
+    }
+
+    // Update the modal image
+    modalImage.src = galleryItems[currentIndex].src;
+}
+
+// Close modal when clicking outside of the image
+modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        closeModal();
+    }
+});
+const switchLanguage = (lang) => {
+  // Update navigation
+  const links = document.querySelectorAll('.main-menu__list a');
+  links.forEach(link => {
+      link.textContent = link.getAttribute(`data-${lang}`);
+  });
+
+  // Update the language button text
+  const languageButton = document.querySelector('.language-dropdown .dropdown-toggle');
+  languageButton.textContent = lang === 'en' ? 'English' : lang === 'ru' ? 'Русский' : "O'zbekcha";
+
+  // Update slider text
+  const sliderTexts = document.querySelectorAll('[data-en], [data-ru], [data-uz]');
+  sliderTexts.forEach(textElement => {
+      textElement.textContent = textElement.getAttribute(`data-${lang}`);
+  });
+
+  // Close the dropdown after selecting a language
+  const dropdown = document.getElementById('language-options');
+  dropdown.style.display = 'none';
+};
+
+const toggleDropdown = () => {
+  const dropdown = document.getElementById('language-options');
+  dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+};
+
+// Optionally hide the dropdown when clicking outside
+document.addEventListener('click', (event) => {
+  const dropdown = document.getElementById('language-options');
+  if (!event.target.closest('.language-dropdown')) {
+      dropdown.style.display = 'none';
+  }
+});
+// Optionally hide the dropdown when clicking outside
+lightGallery(document.querySelector(".gallery"));
+
+lightGallery(document.querySelector(".one-gallery"))
