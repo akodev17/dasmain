@@ -13384,6 +13384,109 @@ body.megamenu-popup-active .mobile-nav__content {
   transform: translateY(0px);
 }
 
+
+.blog-section {
+  padding: 60px 0;
+  background: #F0F5F5;
+  margin-bottom: 50px;
+}
+
+.card {
+  position: relative;
+  border: none;
+  border-radius: 15px;
+  transition: transform 0.4s ease, box-shadow 0.4s;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+
+.card-title a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.card-title a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.badge {
+  font-size: 0.9rem;
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+}
+
+.card-img-top {
+  position: relative;
+  border-radius: 15px 15px 0 0;
+  overflow: hidden;
+  height: 220px;
+}
+
+.card-img-top img {
+  border-radius: 15px 15px 0 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .card-img-top img {
+  transform: scale(1.1);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+.text-muted small a {
+  color: #6c757d;
+  text-decoration: none;
+}
+
+.text-muted small a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.card-footer {
+  background-color: #f8f9fa;
+  border-top: none;
+  padding: 15px 20px;
+  border-radius: 0 0 15px 15px;
+}
+
+.card-footer .badge {
+  background-color: #17a2b8;
+}
+
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 30px;
+  }
+
+  .card-title a {
+    font-size: 1rem;
+  }
+}
+
 .features-two {
   background: linear-gradient(180deg, transparent, var(--insuba-white5, #f0f5f5));
 }
