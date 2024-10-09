@@ -4209,18 +4209,6 @@ li:hover .team-details__info__icon {
 }
 
 /* Toastr xabarlarini markazda joylashuvi */
-.toast-center {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%); /* O'rtaga joylashtirish */
-  z-index: 9999; /* Tezlikda yuqori qatlamda bo'lishi uchun */
-}
-
-.toast {
-  margin: 0; /* Marginni olib tashlash */
-}
-
 
 .main-header--three .main-header__logo::before {
   content: "";
