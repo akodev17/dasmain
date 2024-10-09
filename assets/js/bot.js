@@ -1,24 +1,24 @@
 var telegram_bot_id = "8180733026:AAF65o3bgAqZ1eBaUTp2glxHC8leOLCApZA";
 var chat_id = 1283394957;
-var u_name, email, message;
+var u_name, email, message, number;
 
 var ready = function () {
   u_name = document.getElementById("name").value.trim();
   email = document.getElementById("email").value.trim();
   message = document.getElementById("message").value.trim();
-  console.log("Ism: " + u_name + ", Email: " + email + ", Izoh: " + message);
+  number = document.getElementById("number").value.trim();
 };
 
 var sendtelegram = function () {
   ready();
 
-  if (!u_name || !email || !message) {
+  if (!u_name || !email || !message || !number) {
     toastr.error("Please fill in all fields!"); // Toastr xabari
     return false;
   }
 
   var fullMessage =
-    "Ismi: " + u_name + "\nEmail: " + email + "\nIzoh: " + message;
+    "Ismi: " + u_name + "\nEmail: " + email + "\nIzoh: " + message  + "\nNumber: " + number;
 
   var settings = {
     async: true,
@@ -48,6 +48,7 @@ var sendtelegram = function () {
   document.getElementById("name").value = "";
   document.getElementById("email").value = "";
   document.getElementById("message").value = "";
+  document.getElementById("number").value = "";
 
   return false;
 };
